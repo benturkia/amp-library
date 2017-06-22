@@ -7,6 +7,7 @@ php:
   - hhvm
   - nightly
 
+sudo: required
 dist: trusty
 
 before_script:
@@ -19,4 +20,3 @@ script:
 matrix:
   allow_failures:
     - php: nightly
-
