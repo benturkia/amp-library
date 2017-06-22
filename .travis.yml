@@ -8,10 +8,12 @@ php:
   - nightly
 
 before_script:
-  - composer install
+  - composer self-update
+  - composer install --prefer-dist -n
 
 script:
-  - vendor/bin/phpunit tests
+  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpcs --standard=PSR2 ./src ./tests/AssetManagerTest
 
 matrix:
   allow_failures:
